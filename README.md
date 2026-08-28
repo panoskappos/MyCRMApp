@@ -2,7 +2,7 @@
 
 A modern CRM application for equipment inspection management, built with React 19, Vite, TypeScript, and Firebase.
 
-> **Note**: This project is a sanitized, standalone version based on the **EnergonFire** CRM equipment inspection management system, tailored for demonstration and portfolio showcasing.
+> **Note**: This project is a sanitized, standalone version of a real production ready CRM equipment inspection management system, tailored for demonstration and portfolio showcasing.
 
 ## Features
 
