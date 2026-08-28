@@ -1,24 +1,26 @@
 # MyCRMApp
 
-A modern, generic CRM application for equipment inspection management, built with React, Vite, TypeScript, and Firebase.
+A modern CRM application for equipment inspection management, built with React 19, Vite, TypeScript, and Firebase.
+
+> **Note**: This project is a sanitized, standalone version based on the **EnergonFire** CRM equipment inspection management system, tailored for demonstration and portfolio showcasing.
 
 ## Features
 
 ### Core Functionality
 
-- **Customer Management** with pagination (50 customers per page)
-- **Calendar System** with task management
-- **Inspection Reports** with PDF export functionality
+- **Customer Management** with pagination (50 customers per page with Firestore cursor)
+- **Calendar System** with task management & monthly scheduling
+- **Inspection Reports** with print-friendly layout and PDF export functionality
 - **Role-based Access Control** (Admin, Office, Delivery, Developer)
 
 ### UI / UX
 
-- 🚀 **Performance**: Paginated customer list with Firestore cursor
-- 🎨 **Modern 2026 UI**: Clean, responsive design with Tailwind CSS
+- 🚀 **Performance**: Paginated customer list with Firestore cursors for fast load times
+- 🎨 **Modern UI**: Clean, responsive interface built with Tailwind CSS & Lucide icons
 - 📋 **Enhanced Calendar**: Full-month task management interface
-- 📄 **PDF Export**: Print-friendly inspection report layout
-- 🔐 **Authentication**: Firebase Auth with role-based access
-- 📱 **Mobile Responsive**: Works seamlessly on all devices
+- 📄 **PDF Export**: Clean print styles for customer & store inspection reports
+- 🔐 **Authentication**: Firebase Auth with role-based navigation guards
+- 📱 **Mobile Responsive**: Optimised layout for mobile, tablet, and desktop views
 
 ## Data Model
 
@@ -29,19 +31,19 @@ Customer → Store/Branch → Fire Extinguisher → Inspection
 ### Role Permissions
 
 #### Admin & Developer
-- Full access to all features
-- User management and system administration
-- Customer creation / editing / deletion
-- Task creation and management
+- Full access to all system features
+- User management and account invitation workflow
+- Customer creation, editing, and soft-deletion
+- Full task and calendar management
 
 #### Office
-- Customer management (view, create, edit)
-- Task creation and management
+- Customer & Store management (view, create, edit)
+- Task creation and assignment
 - Inspection report PDF export
 - Calendar access
 
 #### Delivery
-- View customers (limited)
+- View assigned customer sites
 - Calendar access (assigned tasks only)
 - Task completion status updates
 
@@ -58,15 +60,15 @@ Customer → Store/Branch → Fire Extinguisher → Inspection
 
 ## Getting Started
 
-1. Create a new Firebase project and copy your credentials into `.env`:
+1. Create a Firebase project and add your web app credentials to `.env`:
 
-   ```
-   VITE_FIREBASE_API_KEY=
-   VITE_FIREBASE_AUTH_DOMAIN=
-   VITE_FIREBASE_PROJECT_ID=
-   VITE_FIREBASE_STORAGE_BUCKET=
-   VITE_FIREBASE_MESSAGING_SENDER_ID=
-   VITE_FIREBASE_APP_ID=
+   ```env
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_project.firebasestorage.app
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
    ```
 
 2. Install dependencies:
@@ -98,3 +100,4 @@ Customer → Store/Branch → Fire Extinguisher → Inspection
 | `tasks` | Calendar task entries |
 | `users_roles` | User role assignments |
 | `invitations` | Pending user invitations |
+
